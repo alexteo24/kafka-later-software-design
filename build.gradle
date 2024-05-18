@@ -152,13 +152,13 @@ apply from: file('wrapper.gradle')
 if (file('.git').exists()) {
   rat {
     verbose = true
-    reportDir.set(project.file('build/rat'))
-    stylesheet.set(file('gradle/resources/rat-output-to-html.xsl'))
+//    reportDir.set(project.file('build/rat'))
+//    stylesheet.set(file('gradle/resources/rat-output-to-html.xsl'))
 
     // Exclude everything under the directory that git should be ignoring via .gitignore or that isn't checked in. These
     // restrict us only to files that are checked in or are staged.
-    def repo = Grgit.open(currentDir: project.getRootDir())
-    excludes = new ArrayList<String>(repo.clean(ignore: false, directories: true, dryRun: true))
+//    def repo = Grgit.open(currentDir: project.getRootDir())
+//    excludes = new ArrayList<String>(repo.clean(ignore: false, directories: true, dryRun: true))
     // And some of the files that we have checked in should also be excluded from this check
     excludes.addAll([
         '**/.git/**',
